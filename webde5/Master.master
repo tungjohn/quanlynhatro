@@ -1,0 +1,101 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Untitled Page</title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link rel="shortcut icon" href="Images/Icon.ico" />
+    <link href="CSS/CSSMaster.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+    <!-- Phần làm việc của trang-->
+    <div class="Page">
+    <!-- Phần Header-->
+    <div class="HeaderMasterPage"></div>
+    
+    <!--Phần menu Ngang-->
+    <div class="MenuNgang">
+    <div class="MenuNgangTimKiem">
+    Tìm kiếm: 
+    <asp:TextBox ID="txtTimKiem" CssClass="MenuNgangTimKiemTextbox" Text="" runat=server>
+    </asp:TextBox>
+    <asp:Button ID="btTimKiem" Text="Find" runat=server/>
+    </div>
+    <!--Phần menu tìm kiếm-->
+    <ul>
+    <li>Trang chủ</li>
+    <li>Đăng kí</li>
+    <li><a href=PageGioHang.aspx>Giỏ Hàng</a> </li>
+    </ul>
+    </div>
+    <!--Kết thúc Phần menu Ngang-->
+    
+    <!-- Phần Midd là phân giữa Header và Footer-->
+    <!-- Phần này sẽ chứa: Trái, phải và Conten-->
+    <div class="Midd">
+    <!-- Phần menu trái-->
+    <div class="Left">
+    <div class="LeftDanhMucSach">DANH MỤC SÁCH</div>
+    <div>
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
+            ConnectionString="<%$ ConnectionStrings:KetNoi %>" 
+            SelectCommand="SELECT * FROM [tbDanhMucSach]">
+        
+        </asp:SqlDataSource>
+        <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource1">
+        <HeaderTemplate><ul></HeaderTemplate>
+        <ItemTemplate><li><a href ='<%#"PageSachTheoDM.aspx?MaDanhMuc="+Eval("MaDanhMuc")%>' ><%#Eval("TenDanhMuc") %></li></a></ItemTemplate>
+        <FooterTemplate></ul></FooterTemplate>
+        </asp:Repeater>
+    </div>
+    </div>
+    
+    <!-- Phần menu phải: Lịch, Sách giảm giá-->
+    <div class="Right">
+    <div class="DaDangNhap"><%if (Session["DangNhap"] == "T") { Response.Write(Session["TenDN"].ToString()+'\n'+"Đã đăng nhập"); } %></div>
+    <div class="PhaiLich">
+    <asp:Calendar ID="clLich" runat="server" BackColor="#99CCFF" 
+        BorderColor="Black" CaptionAlign="Top" 
+        DayHeaderStyle-Font-Size="X-Small" DayNameFormat="Shortest" 
+        DayStyle-Font-Size="X-Small"  Font-Size="X-Small" 
+        ForeColor="Black" Height="160px" NextPrevFormat="ShortMonth" 
+        NextPrevStyle-Font-Size="X-Small" SelectorStyle-Font-Size="X-Small" 
+        TitleFormat="Month" TodayDayStyle-Font-Size="X-Small" Width="148px">
+        <SelectedDayStyle BackColor="#CC3333" ForeColor="White" />
+        <TodayDayStyle BackColor="#FF6600" />
+        <SelectorStyle BackColor="#CCCCCC" Font-Bold="True" Font-Names="Verdana" 
+            Font-Size="8pt" ForeColor="#333333" Width="1%" />
+        <DayStyle Width="14%" />
+        <OtherMonthDayStyle ForeColor="#999999" />
+        <NextPrevStyle Font-Size="8pt" ForeColor="White" />
+        <DayHeaderStyle BackColor="#CCCCCC" Font-Bold="True" Font-Size="7pt" 
+            ForeColor="#333333" Height="10pt" />
+        <TitleStyle BackColor="Black" Font-Bold="True" Font-Size="13pt" 
+            ForeColor="White" Height="14pt" />
+    </asp:Calendar>
+    </div>
+    <!--Sách giảm giá-->
+    <div class="SachGiamGia"></div>
+    </div>
+    
+    <!-- Phần hiển thị các trang con-->
+    <div class="Content">
+     <div>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </div
+    </div>
+    
+    <!-- Phần Footer-->
+    <div class="FooterMasterPage">Copyright: tk4pro@googlegroups.com</div>
+    </div>
+    </form>
+    
+</body>
+</html>

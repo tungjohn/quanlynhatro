@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="Tintuc (2)">
+</Property><Property Name="Solution File" Value="E:\TAI LIEU LAP TRINH WEB\btl lap trinh web.asp\Van Thuy-Thu Thuy-Le Hoa\VuThuy-LeHoa-VanThuy\Tintuc\Tintuc (2).sln">
+</Property><Property Name="User Options File" Value="E:\TAI LIEU LAP TRINH WEB\btl lap trinh web.asp\Van Thuy-Thu Thuy-Le Hoa\VuThuy-LeHoa-VanThuy\Tintuc\Tintuc (2).suo">
+</Property><Property Name="Date" Value="Sunday, March 15, 2009">
+</Property><Property Name="Time" Value="10:06 AM">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="Tintuc (2).sln" Description="File successfully backed up as E:\TAI LIEU LAP TRINH WEB\btl lap trinh web.asp\Van Thuy-Thu Thuy-Le Hoa\VuThuy-LeHoa-VanThuy\Tintuc\Backup\Tintuc (2).sln">
+</Event><Event ErrorLevel="0" Project="" Source="Tintuc (2).suo" Description="File successfully backed up as E:\TAI LIEU LAP TRINH WEB\btl lap trinh web.asp\Van Thuy-Thu Thuy-Le Hoa\VuThuy-LeHoa-VanThuy\Tintuc\Backup\Tintuc (2).suo">
+</Event><Event ErrorLevel="1" Project="Tintuc" Source="..\Tintuc" Description="Warning: The project file is being backed up to a relative path that differs from the original solution relative path.  The difference in folder hierarchy may create problems in opening or building the backed up solution and project.">
+</Event><Event ErrorLevel="0" Project="" Source="Tintuc (2).sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="Tintuc (2).sln" Description="Converted">
+</Event></UpgradeLog>

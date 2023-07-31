@@ -1,0 +1,171 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Quantri_web.master.cs" Inherits="Admin_Quantri_web" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>Untitled Page</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+     <link href="../CSS/StyleSheet.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+        .auto-style1 {
+            width: 100%;
+        }
+        .auto-style2 {
+            height: 167px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div class="Page" >
+        <div style="text-align: center">
+            <table border="1" style="width: 100%; height: 120px">
+                <tr>
+                    
+                    <td colspan="3" style="background-image: url('/App_Themes/admin.jpg'); background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;" class="auto-style2">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3" style="height: 25px; background-color: #ccff66;">
+                        <div style="text-align: center">
+                            <table class="auto-style1">
+                                <tr>
+                                  <td width="65%" style="height: 21px"><marquee>
+                                      <strong><span style="color: #0000ff">Nhóm SV Nhóm 1 Đại Học Mở </span></strong></marquee></td>
+                                    <td align="left" width="25%" style="text-align: left">
+                                        <asp:Label ID="LblAdmin" runat="server" Font-Bold="True" Font-Size="12pt" ForeColor="#000033"></asp:Label></td>
+                                    <td align="center" width="10%">
+                                        <asp:HyperLink ID="HyperLink6" runat="server" Font-Bold="True" Font-Size="13pt" 
+                                            NavigateUrl="~/Trangchu.aspx" CssClass="btn btn-danger btn-sm">Thoát</asp:HyperLink></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="20%" align="left" valign="top">
+                        <div style="text-align: center">
+                            <div style="text-align: center">
+                            </div>
+                            <table style="width: 100%">
+                                <tr>
+                                    <td style="width: 100px; height: 21px; background-color: #006699; text-align: left;">
+                                        <asp:DataList ID="DataList1" runat="server" DataKeyField="Group_ID" 
+                                            DataSourceID="SqlDataSource1" 
+                                            onselectedindexchanged="DataList1_SelectedIndexChanged" Width="100%" Padding="0" CssClass="menu-all">
+                                            <ItemTemplate>
+                                                <div style="text-align: left">
+                                                    <table style="width: 100%">
+                                                        <tr>
+                                                            <td style="text-align: left" width="100%">
+                                                                <asp:Image ID="Image1" CssClass="link-icon" runat="server" ImageUrl="~/App_Themes/right-arrow.png" />&nbsp;
+                                                                <asp:HyperLink ID="HyperLink1" runat="server" Font-Bold="True" ForeColor="White"
+                                                                    NavigateUrl='<%# "Nhomtin.aspx?Group_ID="+Eval("Group_ID") %>' Text='<%# Eval("Title") %>'
+                                                                    Width="144px"></asp:HyperLink></td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </ItemTemplate>
+                                        </asp:DataList><asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>"
+                                            SelectCommand="SELECT * FROM [Tb_GroupNews]"></asp:SqlDataSource>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div style="text-align: center">
+                            <hr />
+                            <table style="width: 100%">
+                                <tr class="menu-more-admin">
+                                    <td align="left" height: 21px;" width="100%">
+                                        &nbsp;<asp:Image ID="Image7" CssClass="link-icon" runat="server" ImageUrl="~/App_Themes/right-arrow.png" />
+                                        <asp:HyperLink ID="HyperLink3" runat="server" Font-Bold="True" Font-Size="12pt" ForeColor="#FFFFFF"
+                                            NavigateUrl="~/Admin/Xembaiviet.aspx">Xem bài viết</asp:HyperLink></td>
+                                </tr>
+                                <tr class="menu-more-admin">
+                                    <td align="left" width="100%">
+                                        &nbsp;<asp:Image ID="Image8" CssClass="link-icon" runat="server" ImageUrl="~/App_Themes/right-arrow.png" />
+                                        <asp:HyperLink ID="HyperLink4" runat="server" Font-Bold="True" Font-Size="12pt" ForeColor="#FFFFFF"
+                                            NavigateUrl="~/Admin/QuanlyUser.aspx">Quản lý User</asp:HyperLink></td>
+                                </tr>
+                                <tr class="menu-more-admin">
+                                    <td align="left" style="height: 22px; width="100%">
+                                        &nbsp;<asp:Image ID="Image9" CssClass="link-icon" runat="server" ImageUrl="~/App_Themes/right-arrow.png" />
+                                        <asp:HyperLink ID="HyperLink5" runat="server" Font-Bold="True" Font-Size="12pt" ForeColor="#FFFFFF"
+                                            NavigateUrl="~/Admin/Trangchu.aspx">Tìm kiếm</asp:HyperLink></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <br />
+                        <hr />
+                            <asp:Image ID="Image12" runat="server" Height="244px" ImageUrl="~/App_Themes/13aL.jpg" Width="204px" />
+                        <br />
+                        </td>
+                    <td width="60%" valign="top">
+        <asp:contentplaceholder id="ContentPlaceHolder1" runat="server">
+            <strong><span style="color: #0000ff"></span></strong>
+        </asp:contentplaceholder>
+                    </td>
+                    <td style="width: 100px; text-align: center;" valign="top">
+                            <asp:Image ID="Image11" runat="server" Height="257px" ImageUrl="~/App_Themes/chinh-chu-cho-thue-nha-tang-1-tai-so-nha-59b-ngo-42-sai-dong-long-bien-ha-noi-1.jpg" Width="225px" />
+                            <asp:Image ID="Image13" runat="server" Height="293px" ImageUrl="~/App_Themes/1689577812-picturefbxnx.jpg" Width="223px" />
+                            </td>
+                </tr>
+                <tr>
+                    <td colspan="3" style="background-color: #ffff99" height="120" width="760">
+                         <footer class="site-footer">
+                          <div class="container">
+                            <div class="row">
+                              <div class="col-sm-12 col-md-6">
+                                <h6>About</h6>
+                                <p class="text-justify">Nhóm 1: <i>XÂY DỰNG HỆ THỐNG NGÂN HÀNG NHÀ TRỌ CHO SINH VIÊN ĐẠI HỌC MỞ HÀ NỘI </i> 
+
+                                </p>
+                                <ul>
+                                    <li>Trần Thanh Tùng</li>
+                                    <li>Nguyễn Thành Vinh</li>
+                                    <li>Nguyễn Ngọc Khiên</li>
+                                </ul>
+                              </div>
+
+                              <div class="col-xs-6 col-md-3">
+                                <h6>Categories</h6>
+                                <ul class="footer-links">
+                                  <li><a href="#">C#</a></li>
+                                  <li><a href="#">SQL SERVER</a></li>
+                                  <li><a href="#">CSS</a></li>
+                                </ul>
+                              </div>
+
+                              <div class="col-xs-6 col-md-3">
+                                <h6>Quick Links</h6>
+                                <ul class="footer-links">
+                                  <li><a href="#">About Us</a></li>
+                                  <li><a href="#">Contact Us</a></li>
+                                </ul>
+                              </div>
+                            </div>
+                            <hr>
+                          </div>
+                          <div class="container">
+                            <div class="row">
+                              <div class="col-md-8 col-sm-6 col-xs-12">
+                                <p class="copyright-text">Copyright &copy; 2023 All Rights Reserved by 
+                             <a href="#">Ehou Team 1</a>.
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                    </footer>
+
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <br />
+        &nbsp;</div>
+    </form>
+</body>
+</html>
