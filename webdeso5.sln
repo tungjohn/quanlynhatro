@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32922.545
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "webde5", "webde5\", "{9833C3B9-F4C8-49B8-9B00-38CC2F5FF811}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.8.1"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_49984"
+		Debug.AspNetCompiler.PhysicalPath = "webde5\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_49984\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_49984"
+		Release.AspNetCompiler.PhysicalPath = "webde5\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_49984\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "49984"
+		SlnRelativePath = "webde5\"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9833C3B9-F4C8-49B8-9B00-38CC2F5FF811}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9833C3B9-F4C8-49B8-9B00-38CC2F5FF811}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4DEE50AD-F0CC-46A3-8422-91EEE2DA1BB9}
+	EndGlobalSection
+EndGlobal
